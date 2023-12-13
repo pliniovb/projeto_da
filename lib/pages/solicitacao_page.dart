@@ -14,6 +14,9 @@ class SolicitacaoPage extends StatefulWidget {
 
 class _SolicitacaoPageState extends State<SolicitacaoPage> {
   File? _imagem;
+  String? titulo;
+  String? descricao;
+  final myController = TextEditingController();
 
   Future _tirarFoto() async {
     final captura = await ImagePicker().pickImage(source: ImageSource.camera);
@@ -39,11 +42,7 @@ class _SolicitacaoPageState extends State<SolicitacaoPage> {
                   backgroundColor: Colors.transparent,
                   foregroundColor: Colors.black87),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const SolicitacoesPage()),
-                );
+                titulo = myController.text;
               },
               child: const Center(child: Text("Cadastrar")),
             ),
@@ -55,10 +54,11 @@ class _SolicitacaoPageState extends State<SolicitacaoPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextFormField(
+                controller: myController,
                 decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: "Título",
-            )),
+                  border: OutlineInputBorder(),
+                  labelText: "Título",
+                )),
             TextFormField(
                 decoration: const InputDecoration(
               border: OutlineInputBorder(),

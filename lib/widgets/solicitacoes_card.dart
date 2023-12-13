@@ -27,7 +27,7 @@ class _SolicitacoesCardState extends State<SolicitacoesCard> {
                   color: Colors.blue[800],
                 ),
                 child: Text(widget.solicitacao.titulo,
-                    style: TextStyle(fontSize: 18, color: Colors.white)),
+                    style: const TextStyle(fontSize: 18, color: Colors.white)),
               ),
               Container(
                 padding:
@@ -36,7 +36,7 @@ class _SolicitacoesCardState extends State<SolicitacoesCard> {
                   color: Colors.blue[700],
                 ),
                 child: Text(widget.solicitacao.data,
-                    style: TextStyle(fontSize: 18, color: Colors.white)),
+                    style: const TextStyle(fontSize: 18, color: Colors.white)),
               ),
             ]),
           ),

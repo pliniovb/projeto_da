@@ -30,7 +30,7 @@ class _DetalhesPageState extends State<DetalhesPage> {
             children: [
               TextField(
                   controller: myController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Faça um comentário",
                   )),
@@ -89,11 +89,12 @@ class _DetalhesPageState extends State<DetalhesPage> {
                       children: [
                         Text(
                           widget.solicitacao.titulo,
-                          style: TextStyle(fontSize: 28, color: Colors.black87),
+                          style: const TextStyle(
+                              fontSize: 28, color: Colors.black87),
                         ),
                         Text(widget.solicitacao.descricao,
-                            style:
-                                TextStyle(fontSize: 18, color: Colors.black87)),
+                            style: const TextStyle(
+                                fontSize: 18, color: Colors.black87)),
                       ],
                     ),
                   ),
@@ -106,14 +107,7 @@ class _DetalhesPageState extends State<DetalhesPage> {
                       child: Padding(
                         padding: const EdgeInsets.only(left: 1.0),
                         child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SolicitacoesPage()),
-                              );
-                            },
-                            child: const Icon(Icons.delete)),
+                            onPressed: () {}, child: const Icon(Icons.delete)),
                       ),
                     ),
                     SizedBox(
@@ -121,14 +115,7 @@ class _DetalhesPageState extends State<DetalhesPage> {
                       child: Padding(
                         padding: const EdgeInsets.only(left: 1.0),
                         child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SolicitacaoPage()),
-                              );
-                            },
-                            child: const Icon(Icons.edit)),
+                            onPressed: () {}, child: const Icon(Icons.edit)),
                       ),
                     )
                   ]),
